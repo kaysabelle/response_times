@@ -26,6 +26,23 @@
             attribution: 'Map data &copy; ' + mapLink,
             maxZoom: 18,
             }).addTo(map);
+            
+            
+        var stations = new L.LayerGroup();
+        var grayscale   = L.tileLayer(mbUrl, {id: 'examples.map-20v6611k', attribution: mbAttr}),
+		    streets  = L.tileLayer(mbUrl, {id: 'examples.map-i875mjb7',   attribution: mbAttr});
+        
+        var baseLayers = {
+  			  "Grayscale": grayscale,
+  			  "Streets": streets
+		    };
+
+    		var overlays = {
+    			"Cities": cities
+    		};
+        
+        L.control.layers(baseLayers, overlays).addTo(map);
+        
       </script>
   </body>
 </html>
