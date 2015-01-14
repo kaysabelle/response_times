@@ -35,3 +35,5 @@ do
 	# done
 
 done < FSList.txt
+
+mv *.geojson ../data/
