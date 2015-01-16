@@ -90,7 +90,7 @@ var markerClusters = new L.MarkerClusterGroup({
   spiderfyOnMaxZoom: true,
   showCoverageOnHover: false,
   zoomToBoundsOnClick: true,
-  disableClusteringAtZoom: 12
+  disableClusteringAtZoom: 10
 });
 
 /* Empty layer placeholder to add to layer control for listening when to add/remove stations to markerClusters layer */
