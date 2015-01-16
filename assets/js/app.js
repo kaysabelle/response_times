@@ -1,4 +1,4 @@
-var map, featureList, stationSearch = [];
+var map, stationSearch = [];
 
 $(document).on("click", ".feature-row", function(e) {
   sidebarClick(parseInt($(this).attr("id"), 10));
@@ -258,8 +258,6 @@ $(document).one("ajaxStop", function () {
   $("#loading").hide();
   /* Fit map to stations bounds */
   map.fitBounds(stations.getBounds());
-  featureList = new List("features", {valueNames: ["feature-name"]});
-  featureList.sort("feature-name", {order:"asc"});
 
   var stationBH = new Bloodhound({
     name: "Stations",
