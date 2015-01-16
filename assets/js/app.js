@@ -256,7 +256,7 @@ var stations = L.geoJson(null, {
         click: function (e) {
           $("#feature-title").html(feature.properties.name);
           $("#feature-info").html(content);
-          
+
           $("#featureModal").modal("show");
           highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
             stroke: false,
@@ -426,6 +426,9 @@ $(document).one("ajaxStop", function () {
     local: stationSearch,
     limit: 10
   });
+
+  var stationList = new List("stations", {valueNames: ["station-name"]}).sort("station-name", {order:"asc"});
+
 
   var geonamesBH = new Bloodhound({
     name: "GeoNames",
