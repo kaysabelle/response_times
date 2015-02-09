@@ -106,17 +106,17 @@ var stations = L.geoJson(null, {
       }),
       title: feature.properties.name,
       riseOnHover: true
-    });
+    }).bindPopup('<table class="table table-striped table-bordered table-condensed">' + '<tr><th>Name</th><td>' + feature.properties.name + '</td></tr>' + '<tr><th>Phone</th><td>' + feature.properties.phone_num + '</td></tr>' + '<tr><th>Address</th><td>' + feature.properties.address + '</td></tr><table>');
   },
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
-      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.name + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.phone_num + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.address + "</td></tr>" + "<table>";
+      //var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.name + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.phone_num + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.address + "</td></tr>" + "<table>";
       layer.on({
         click: function (e) {
-          $("#feature-title").html(feature.properties.name);
-          $("#feature-info").html(content);
+          //$("#feature-title").html(feature.properties.name);
+          //$("#feature-info").html(content);
 
-          $("#featureModal").modal("show");
+          //$("#featureModal").modal("show");
           highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], {
             stroke: false,
             fillColor: "#00FFFF",
